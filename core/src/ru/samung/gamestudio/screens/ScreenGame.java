@@ -69,10 +69,11 @@ public class ScreenGame implements Screen {
         for (Tube tube : tubes) {
             tube.move();
             if (tube.isHit(bird)) {
-                System.out.println("hit");
                 isGameOver = true;
-            } else if (tube.isPassed(bird)) {
+                System.out.println("hit");
+            } else if (tube.needAddPoint(bird)) {
                 gamePoints += 1;
+                tube.setPointReceived();
                 System.out.println(gamePoints);
             }
         }
