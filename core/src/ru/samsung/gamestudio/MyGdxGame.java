@@ -1,11 +1,11 @@
-package ru.samung.gamestudio;
+package ru.samsung.gamestudio;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import ru.samung.gamestudio.screens.ScreenGame;
-import ru.samung.gamestudio.screens.ScreenRestart;
+import ru.samsung.gamestudio.screens.ScreenGame;
+import ru.samsung.gamestudio.screens.ScreenRestart;
 
 public class MyGdxGame extends Game {
 

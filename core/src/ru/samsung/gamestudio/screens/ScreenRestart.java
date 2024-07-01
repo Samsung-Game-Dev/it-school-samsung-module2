@@ -1,14 +1,14 @@
-package ru.samung.gamestudio.screens;
+package ru.samsung.gamestudio.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import ru.samung.gamestudio.components.MovingBackground;
-import ru.samung.gamestudio.MyGdxGame;
-import ru.samung.gamestudio.components.PointCounter;
-import ru.samung.gamestudio.components.TextButton;
+import ru.samsung.gamestudio.components.MovingBackground;
+import ru.samsung.gamestudio.MyGdxGame;
+import ru.samsung.gamestudio.components.PointCounter;
+import ru.samsung.gamestudio.components.TextButton;
 
 public class ScreenRestart implements Screen {
 

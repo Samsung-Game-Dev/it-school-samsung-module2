@@ -1,17 +1,17 @@
-package ru.samung.gamestudio.screens;
+package ru.samsung.gamestudio.screens;
 
-import static ru.samung.gamestudio.MyGdxGame.SCR_HEIGHT;
-import static ru.samung.gamestudio.MyGdxGame.SCR_WIDTH;
+import static ru.samsung.gamestudio.MyGdxGame.SCR_HEIGHT;
+import static ru.samsung.gamestudio.MyGdxGame.SCR_WIDTH;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import ru.samung.gamestudio.characters.Bird;
-import ru.samung.gamestudio.components.MovingBackground;
-import ru.samung.gamestudio.MyGdxGame;
-import ru.samung.gamestudio.components.PointCounter;
-import ru.samung.gamestudio.characters.Tube;
+import ru.samsung.gamestudio.characters.Bird;
+import ru.samsung.gamestudio.components.MovingBackground;
+import ru.samsung.gamestudio.MyGdxGame;
+import ru.samsung.gamestudio.components.PointCounter;
+import ru.samsung.gamestudio.characters.Tube;
 
 public class ScreenGame implements Screen {
 
