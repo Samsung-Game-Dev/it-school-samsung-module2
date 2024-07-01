@@ -1,4 +1,4 @@
-package ru.samung.gamestudio;
+package ru.samsung.gamestudio;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
