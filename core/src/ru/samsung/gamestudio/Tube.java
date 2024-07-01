@@ -1,7 +1,7 @@
-package ru.samung.gamestudio;
+package ru.samsung.gamestudio;
 
-import static ru.samung.gamestudio.MyGdxGame.SCR_HEIGHT;
-import static ru.samung.gamestudio.MyGdxGame.SCR_WIDTH;
+import static ru.samsung.gamestudio.MyGdxGame.SCR_HEIGHT;
+import static ru.samsung.gamestudio.MyGdxGame.SCR_WIDTH;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
