@@ -1,27 +1,32 @@
-package ru.samung.gamestudio.screens;
+package ru.samsung.gamestudio.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import ru.samung.gamestudio.components.MovingBackground;
-import ru.samung.gamestudio.MyGdxGame;
-import ru.samung.gamestudio.components.TextButton;
+import ru.samsung.gamestudio.components.MovingBackground;
+import ru.samsung.gamestudio.MyGdxGame;
+import ru.samsung.gamestudio.components.PointCounter;
+import ru.samsung.gamestudio.components.TextButton;
 
-public class ScreenMenu implements Screen {
+public class ScreenRestart implements Screen {
 
     MyGdxGame myGdxGame;
 
     MovingBackground background;
-    TextButton buttonStart;
-    TextButton buttonExit;
+    PointCounter pointCounter;
+    TextButton buttonRestart;
+    TextButton buttonMenu;
 
-    public ScreenMenu(MyGdxGame myGdxGame) {
+    int gamePoints;
+
+    public ScreenRestart(MyGdxGame myGdxGame) {
         this.myGdxGame = myGdxGame;
 
-        buttonStart = new TextButton(100, 400, "Start");
-        buttonExit = new TextButton(700, 400, "Exit");
+        pointCounter = new PointCounter(750, 530);
+        buttonRestart = new TextButton(100, 400, "Restart");
+        buttonMenu = new TextButton(100, 150, "Menu");
         background = new MovingBackground("backgrounds/restart_bg.png");
     }
 
@@ -32,17 +37,18 @@ public class ScreenMenu implements Screen {
 
     @Override
     public void render(float delta) {
+
         if (Gdx.input.justTouched()) {
 
             Vector3 touch = myGdxGame.camera.unproject(
                     new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0)
             );
 
-            if (buttonStart.isHit((int) touch.x, (int) touch.y)) {
+            if (buttonRestart.isHit((int) touch.x, (int) touch.y)) {
                 myGdxGame.setScreen(myGdxGame.screenGame);
             }
-            if (buttonExit.isHit((int) touch.x, (int) touch.y)) {
-                Gdx.app.exit();
+            if (buttonMenu.isHit((int) touch.x, (int) touch.y)) {
+                myGdxGame.setScreen(myGdxGame.screenMenu);
             }
         }
 
@@ -52,8 +58,9 @@ public class ScreenMenu implements Screen {
         myGdxGame.batch.begin();
 
         background.draw(myGdxGame.batch);
-        buttonStart.draw(myGdxGame.batch);
-        buttonExit.draw(myGdxGame.batch);
+        buttonMenu.draw(myGdxGame.batch);
+        buttonRestart.draw(myGdxGame.batch);
+        pointCounter.draw(myGdxGame.batch, gamePoints);
 
         myGdxGame.batch.end();
     }
@@ -81,7 +88,6 @@ public class ScreenMenu implements Screen {
     @Override
     public void dispose() {
         background.dispose();
-        buttonExit.dispose();
-        buttonStart.dispose();
+        buttonRestart.dispose();
     }
 }
