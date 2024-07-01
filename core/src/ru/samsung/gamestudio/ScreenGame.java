@@ -1,4 +1,4 @@
-package ru.samung.gamestudio;
+package ru.samsung.gamestudio;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
