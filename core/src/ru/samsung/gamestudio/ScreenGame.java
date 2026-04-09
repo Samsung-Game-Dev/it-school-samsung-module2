@@ -9,8 +9,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class ScreenGame implements Screen {
 
-    final int pointCounterMarginTop = 400;
-    final int pointCounterMarginRight = 60;
+    final int pointCounterMarginTop = 60;
+    final int pointCounterMarginRight = 400;
 
     MyGdxGame myGdxGame;
 
@@ -28,7 +28,7 @@ public class ScreenGame implements Screen {
 
         initTubes();
         bird = new Bird(20, SCR_HEIGHT / 2, 10, 250, 200);
-        pointCounter = new PointCounter(SCR_WIDTH - pointCounterMarginTop, SCR_HEIGHT - pointCounterMarginRight);
+        pointCounter = new PointCounter(SCR_WIDTH - pointCounterMarginRight, SCR_HEIGHT - pointCounterMarginTop);
     }
 
 
