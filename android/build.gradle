@@ -1,7 +1,7 @@
 android {
-    namespace "ru.samung.gamestudio"
+    namespace "ru.samsung.gamestudio"
     buildToolsVersion "33.0.2"
-    compileSdkVersion 32
+    compileSdkVersion 33
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -18,9 +18,9 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "ru.samung.gamestudio"
-        minSdkVersion 14
-        targetSdkVersion 32
+        applicationId "ru.samsung.gamestudio"
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -83,7 +83,7 @@ tasks.register('run', Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'ru.samung.gamestudio/ru.samung.gamestudio.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'ru.samsung.gamestudio/ru.samsung.gamestudio.AndroidLauncher'
 }
 
 eclipse.project.name = appName + "-android"
