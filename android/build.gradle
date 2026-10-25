@@ -1,7 +1,7 @@
 android {
     namespace "ru.samsung.gamestudio"
     buildToolsVersion "33.0.2"
-    compileSdkVersion 32
+    compileSdkVersion 33
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -19,8 +19,8 @@ android {
     }
     defaultConfig {
         applicationId "ru.samsung.gamestudio"
-        minSdkVersion 14
-        targetSdkVersion 32
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
