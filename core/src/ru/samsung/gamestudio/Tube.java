@@ -10,19 +10,20 @@ import java.util.Random;
 
 public class Tube {
 
-    Texture textureUpperTube;
-    Texture textureDownTube;
+    private Texture textureUpperTube;
+    private Texture textureDownTube;
 
-    Random random;
+    private Random random;
 
-    int x, gapY;
-    int distanceBetweenTubes;
+    private int x;
+    private int gapY;
+    private int distanceBetweenTubes;
 
-    int speed = 10;
-    final int width = 200;
-    final int height = 700;
-    int gapHeight = 400;
-    int padding = 100;
+    private int speed = 10;
+    private int width = 200;
+    private int height = 700;
+    private int gapHeight = 400;
+    private int padding = 100;
 
     public Tube(int tubeCount, int tubeIdx) {
         random = new Random();
@@ -35,21 +36,22 @@ public class Tube {
         textureDownTube = new Texture("tubes/tube.png");
     }
 
-    void draw(Batch batch) {
+    public void draw(Batch batch) {
         batch.draw(textureUpperTube, x, gapY + gapHeight / 2, width, height);
         batch.draw(textureDownTube, x, gapY - gapHeight / 2 - height, width, height);
     }
 
-    void move() {
+    public void move() {
         x -= speed;
+
         if (x < -width) {
             x = SCR_WIDTH + distanceBetweenTubes;
             gapY = gapHeight / 2 + padding + random.nextInt(SCR_HEIGHT - 2 * (padding + gapHeight / 2));
         }
     }
 
-    void dispose() {
-        textureDownTube.dispose();
+    public void dispose() {
         textureUpperTube.dispose();
+        textureDownTube.dispose();
     }
 }
