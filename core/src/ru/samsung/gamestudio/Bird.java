@@ -5,16 +5,16 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 
 public class Bird {
 
-    int x, y;
-    int width, height;
+    private int x, y;
+    private int width, height;
 
-    int speed;
-    int jumpHeight;
-    final int maxHeightOfJump = 200;
-    boolean jump;
+    private int speed;
+    private int jumpHeight;
+    private final int maxHeightOfJump = 200;
+    private boolean jump;
 
-    int frameCounter;
-    Texture[] framesArray;
+    private int frameCounter;
+    private Texture[] framesArray;
 
     public Bird(int x, int y, int speed, int width, int height) {
         this.x = x;
@@ -32,12 +32,12 @@ public class Bird {
         };
     }
 
-    void onClick() {
+    public void onClick() {
         jump = true;
         jumpHeight = maxHeightOfJump + y;
     }
 
-    void fly() {
+    public void fly() {
         if (y >= jumpHeight) {
             jump = false;
         }
@@ -49,16 +49,20 @@ public class Bird {
         }
     }
 
-    void draw(Batch batch) {
+    public void draw(Batch batch) {
         int frameMultiplier = 10;
+
         batch.draw(framesArray[frameCounter / frameMultiplier], x, y, width, height);
-        if (frameCounter++ == framesArray.length * frameMultiplier - 1) frameCounter = 0;
+
+        frameCounter++;
+        if (frameCounter == framesArray.length * frameMultiplier) {
+            frameCounter = 0;
+        }
     }
 
-    void dispose() {
+    public void dispose() {
         for (Texture texture : framesArray) {
             texture.dispose();
         }
     }
-
 }
