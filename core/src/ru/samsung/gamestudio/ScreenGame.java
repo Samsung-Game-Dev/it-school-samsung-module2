@@ -11,7 +11,7 @@ public class ScreenGame implements Screen {
 
     ScreenGame(MyGdxGame myGdxGame) {
         this.myGdxGame = myGdxGame;
-        bird = new Bird(0, 0, 10, 250, 200);
+        bird = new Bird(0, MyGdxGame.SCR_HEIGHT / 2, 10, 250, 200);
     }
 
     @Override
